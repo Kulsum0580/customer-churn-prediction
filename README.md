@@ -9,7 +9,7 @@
 ---
 
 ## 🚀 Live Demo
-👉 **[Click here to open the app]https://subdiaconal-unveridically-shanta.ngrok-free.dev
+👉 **[Click here to open the app]https://customer-churn-prediction-nd8rmh25com2szccvg7lnq.streamlit.app/
 
 ---
 
@@ -60,21 +60,3 @@ streamlit run app.py
 [IBM Telco Customer Churn - Kaggle](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
 ```
 
-5. Click **Commit changes** → **Commit changes** again
-
----
-
-## Step 6 — Deploy on Streamlit Cloud (Free & Permanent)
-
-1. Go to **share.streamlit.io**
-2. Click **Sign in with GitHub**
-3. Click **New app**
-4. Fill in:
-   - **Repository:** `your-username/customer-churn-prediction`
-   - **Branch:** `main`
-   - **Main file path:** `app.py`
-5. Click **Deploy!**
-6. Wait 2-3 minutes ⏳
-7. You get a link like:
-```
-https://your-username-customer-churn-prediction.streamlit.app
