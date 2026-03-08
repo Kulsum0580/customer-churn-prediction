@@ -22,9 +22,9 @@ section[data-testid="stSidebar"] { background-color: #1e293b; border-right: 1px 
 
 @st.cache_resource
 def load_artifacts():
-    with open("/content/customer_churn_model.pkl","rb") as f:
+    with open("customer_churn_model.pkl","rb") as f:
         md = pickle.load(f)
-    with open("/content/encoders.pkl","rb") as f:
+    with open("encoders.pkl","rb") as f:
         enc = pickle.load(f)
     return md["model"], enc
 
@@ -74,7 +74,6 @@ st.markdown("Predict whether a telecom customer will churn using a trained **Ran
 
 if not model_loaded:
     st.error(f"Could not load model: {load_error}")
-    st.info("Re-run the training cells to recreate customer_churn_model.pkl and encoders.pkl")
     st.stop()
 
 if predict_btn:
