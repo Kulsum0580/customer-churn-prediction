@@ -27,25 +27,31 @@
 ## 🔄 ML Pipeline
 
 ```mermaid
-flowchart LR
-    A[📥 Raw Data\nIBM Telco CSV] --> B[🧹 Data Cleaning\nHandle nulls & types]
-    B --> C[🔢 Feature Engineering\nEncode categoricals]
-    C --> D[⚖️ SMOTE\nBalance classes]
-    D --> E[✂️ Train / Test Split\n80% / 20%]
-    E --> F[🌲 Random Forest\nDecision Tree\nXGBoost]
-    F --> G[📊 Evaluation\nAccuracy · Recall · F1]
-    G --> H[💡 SHAP\nExplainability]
-    H --> I[🚀 Streamlit App\nLive Prediction]
+flowchart TD
+    A[📥 Raw Data\n7043 records · 21 features] --> B[🧹 Data Cleaning\nDrop nulls · Fix types · Remove duplicates]
+    B --> C[🔢 Feature Engineering\nLabel encode · One-hot encode]
+    C --> D[⚖️ SMOTE\nHandle class imbalance · Oversample minority]
+    D --> E[✂️ Train / Test Split\n80% train · 20% test · Stratified]
+    E --> F1[🌲 Random Forest\nBest · Accuracy 77.6%]
+    E --> F2[⚡ XGBoost\nRunner-up · Accuracy 76.1%]
+    E --> F3[🌿 Decision Tree\nBaseline · Accuracy 72.4%]
+    F1 --> G[📊 Model Evaluation\nAccuracy · Recall · F1-Score · Confusion Matrix]
+    F2 --> G
+    F3 --> G
+    G --> H[💡 SHAP Analysis\nFeature importance · Why did it churn?]
+    H --> I[🚀 Streamlit Deployment\nReal-time prediction · User input form]
 
-    style A fill:#1a1a2e,color:#00e5a0,stroke:#00e5a0
-    style B fill:#1a1a2e,color:#00b8ff,stroke:#00b8ff
-    style C fill:#1a1a2e,color:#00b8ff,stroke:#00b8ff
-    style D fill:#1a1a2e,color:#00e5a0,stroke:#00e5a0
-    style E fill:#1a1a2e,color:#00b8ff,stroke:#00b8ff
-    style F fill:#1a1a2e,color:#ff6b6b,stroke:#ff6b6b
-    style G fill:#1a1a2e,color:#00e5a0,stroke:#00e5a0
-    style H fill:#1a1a2e,color:#00b8ff,stroke:#00b8ff
-    style I fill:#1a1a2e,color:#00e5a0,stroke:#00e5a0
+    style A fill:#0e1319,color:#00e5a0,stroke:#00e5a0,stroke-width:2px
+    style B fill:#0e1319,color:#00b8ff,stroke:#00b8ff,stroke-width:2px
+    style C fill:#0e1319,color:#00b8ff,stroke:#00b8ff,stroke-width:2px
+    style D fill:#0e1319,color:#00e5a0,stroke:#00e5a0,stroke-width:2px
+    style E fill:#0e1319,color:#00b8ff,stroke:#00b8ff,stroke-width:2px
+    style F1 fill:#0e1319,color:#ff6b6b,stroke:#ff6b6b,stroke-width:2px
+    style F2 fill:#0e1319,color:#ff6b6b,stroke:#ff6b6b,stroke-width:2px
+    style F3 fill:#0e1319,color:#ff6b6b,stroke:#ff6b6b,stroke-width:2px
+    style G fill:#0e1319,color:#00e5a0,stroke:#00e5a0,stroke-width:2px
+    style H fill:#0e1319,color:#00b8ff,stroke:#00b8ff,stroke-width:2px
+    style I fill:#0e1319,color:#00e5a0,stroke:#00e5a0,stroke-width:2px
 ```
 
 ---
